@@ -1,20 +1,34 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>
+            Blank
+        </ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    <ion-header collapse="condense">
+        <ion-toolbar>
+            <ion-title size="large">Blank</ion-title>
+        </ion-toolbar>
+    </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+    <ion-grid>
+        <ion-row class="ion-align-items-center" style="padding-bottom: 10px;">
+            <ion-col style="text-align: center;">
+                <ion-chip (click)="openProfileActionSheet()" style="transform: scale(1.1); display: inline-block; color: white;" color="white" outline="true">
+                    Change Profile Picture
+                </ion-chip>
+            </ion-col>
+        </ion-row>
+
+
+        <ion-row>
+            <div>
+                <image-cropper [cropperMinWidth]="128" [imageBase64]="imageBase64" [hideResizeSquares]="true" [roundCropper]="true" [imageQuality]="100" format="png" (imageCropped)="imageCropped($event)" (loadImageFailed)="loadImageFailed()">
+                </image-cropper>
+            </div>
+
+        </ion-row>
+    </ion-grid>
 </ion-content>
