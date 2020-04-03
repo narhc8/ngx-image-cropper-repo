@@ -14,6 +14,12 @@
     </ion-header>
 
     <ion-grid>
+
+        <ion-row>
+            <ion-searchbar (ionFocus)="searchBarBlur($event)" inputmode="search" animated="true" autocomplete="on" autocorrect="on" show-cancel-button="focus" placeholder="Search by tag or name" debounce="500">
+            </ion-searchbar>
+        </ion-row>
+
         <ion-row class="ion-align-items-center" style="padding-bottom: 10px;">
             <ion-col style="text-align: center;">
                 <ion-chip (click)="openProfileActionSheet()" style="transform: scale(1.1); display: inline-block; color: white;" color="white" outline="true">

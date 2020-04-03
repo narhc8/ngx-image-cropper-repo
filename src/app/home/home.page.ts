@@ -43,4 +43,8 @@ export class HomePage {
     console.error('error');
   }
 
+  searchBarBlur(event) {
+    console.log(event);
+  }
+
 }
